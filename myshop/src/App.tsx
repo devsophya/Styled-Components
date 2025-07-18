@@ -1,7 +1,17 @@
-import React from "react";
+import { Header } from "./components/Header/Header";
+import { ProductCard } from "./components/ProductCard/ProductCard";
+import { GlobalStyles } from "./styles/GlobalStyles";
 
 function App() {
-  return <h1>Styled Components</h1>;
+  return (
+    <>
+      <Header />
+
+      <ProductCard />
+
+      <GlobalStyles />
+    </>
+  );
 }
 
 export default App;
