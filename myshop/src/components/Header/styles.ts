@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
 `;
 
 export const HeaderTitle = styled.h1`
-  color: #212121;
+  color: #fefefe;
 `;
 
 export const ButtonsWrapper = styled.div`
@@ -24,14 +24,17 @@ export const ButtonsWrapper = styled.div`
   gap: 1rem;
 `;
 
-export const AuthButton = styled.button`
+interface AuthButtonProps {
+  isLogged: boolean;
+}
+
+export const AuthButton = styled.button<AuthButtonProps>`
   border: none;
   border-radius: 5px;
   height: 30px;
   padding: 0 1rem;
-  background-color: #deae54;
-  color: #212121;
-  font-size: 0.75rem;
+  background-color: ${(props) => (props.isLogged ? "#F59169" : "#deae54")};
+  color: #fefefe;
 
   display: flex;
   align-items: center;
@@ -39,6 +42,14 @@ export const AuthButton = styled.button`
 
   svg {
     font-size: 0.7rem;
+    font-weight: 500;
+  }
+
+  &:hover {
+    background-color: #fefefe;
+    color: ${(props) => (props.isLogged ? "#F59169" : "#deae54")};
+    filter: none;
+    cursor: pointer;
   }
 `;
 
@@ -48,7 +59,7 @@ export const CartButton = styled.button`
   height: 30px;
   padding: 0 1rem;
   background-color: #c06dfa;
-  color: #212121;
+  color: #fefefe;
   font-size: 0.75rem;
 
   display: flex;
@@ -57,5 +68,13 @@ export const CartButton = styled.button`
 
   svg {
     font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+    &:hover {
+    background-color: #fefefe;
+    color: #c06dfa;
+    filter: none;
+    cursor: pointer;
   }
 `;
